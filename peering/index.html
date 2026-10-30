@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Peering policy for CloudC EdLab Network / AS203991. Selective IPv4 and IPv6 peering for education, routing research, and mutually useful connectivity.">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="https://peeringdb-media-prod.s3.amazonaws.com/media/logos_user_supplied/organization-43480-5e8de127.jpg">
+  <link rel="canonical" href="https://cloudc.dev/peering/">
+  <title>Peering Policy - CloudC EdLab Network / AS203991</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fa;
+      --surface: #ffffff;
+      --ink: #17202a;
+      --muted: #5f6e7a;
+      --line: #d9e2ea;
+      --accent: #0f766e;
+      --link: #245fc9;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.65; }
+    a { color: var(--link); text-underline-offset: 0.2em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 0.91em; overflow-wrap: anywhere; }
+    p { margin: 0 0 16px; }
+    p:last-child { margin-bottom: 0; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position: absolute; left: 16px; top: -100px; z-index: 30; padding: 8px 16px; background: var(--surface); }
+    .skip-link:focus { top: 8px; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(250, 252, 254, 0.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 750; color: var(--ink); text-decoration: none; }
+    .brand img { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 7px; object-fit: cover; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { padding: 64px 0 36px; }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; align-items: start; gap: 48px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+    h1 { margin: 0 0 20px; font-size: clamp(2.5rem, 5vw, 3.75rem); line-height: 1.1; letter-spacing: -0.045em; }
+    .lead { max-width: 620px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); text-decoration: none; font-size: 0.9rem; font-weight: 700; }
+    .button:hover { border-color: var(--accent); color: var(--accent); }
+    .button.primary { background: var(--accent); border-color: var(--accent); color: white; }
+    .button.primary:hover { background: #0b5c56; }
+    .summary { overflow: hidden; border: 1px solid #253747; border-radius: 10px; background: #101820; color: #dce8ef; box-shadow: 0 18px 48px rgba(23, 32, 42, 0.1); }
+    .summary-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; border-bottom: 1px solid #2c3b46; }
+    .summary-title h2 { margin: 0; font-size: 0.95rem; font-weight: 650; }
+    .badge { padding: 3px 10px; border: 1px solid #29674e; border-radius: 20px; color: #b8edcf; background: #163b2e; font-size: 0.75rem; }
+    dl { margin: 0; }
+    .summary dl { padding: 8px 20px; }
+    .fact { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 11px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.09); font-size: 0.88rem; }
+    .fact:last-child { border: 0; }
+    .fact dt { color: #9db1bf; }
+    .fact dd { margin: 0; text-align: right; color: #ffffff; font-weight: 650; }
+    .metadata { margin-top: 28px; color: var(--muted); font-size: 0.82rem; }
+    section { padding: 30px 0; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0; font-size: 1.45rem; line-height: 1.4; letter-spacing: -0.02em; }
+    .section-head span { color: var(--muted); font-size: 0.88rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { min-width: 0; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 10px 30px rgba(23, 32, 42, 0.035); }
+    h3 { margin: 0 0 12px; font-size: 1rem; }
+    .card p, .card li { color: var(--muted); }
+    .card ul, .card ol { margin: 0; padding-left: 20px; }
+    .card li + li { margin-top: 9px; }
+    .notice { margin-top: 16px; padding: 18px 22px; border: 1px solid #cce2de; border-left: 3px solid var(--accent); border-radius: 6px; background: #edf6f3; color: #355550; font-size: 0.92rem; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.94rem; }
+    caption { padding: 18px 22px; text-align: left; color: var(--muted); font-size: 0.88rem; }
+    th, td { padding: 14px 22px; border-top: 1px solid #e8eef3; }
+    th { background: #f7fafc; font-size: 0.8rem; color: var(--muted); font-weight: 650; }
+    .table-note { margin-top: 12px; font-size: 0.88rem; color: var(--muted); }
+    .request { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .request h3 { margin-top: 24px; }
+    .request h3:first-child { margin-top: 0; }
+    .request ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .template { margin: 0; padding: 22px; border: 1px solid var(--line); border-radius: 6px; background: #f7fafc; color: #364957; font: 0.85rem/1.85 "SFMono-Regular", Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .contact-email { overflow-wrap: anywhere; font-size: 1.1rem; font-weight: 700; }
+    footer { margin-top: 30px; border-top: 1px solid var(--line); padding: 24px 0 32px; color: var(--muted); font-size: 0.82rem; }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    @media (max-width: 800px) {
+      .nav { align-items: flex-start; flex-direction: column; gap: 12px; padding: 14px 0; }
+      .nav-links { gap: 18px; }
+      html { scroll-padding-top: 130px; }
+      .hero { padding-top: 40px; }
+      .hero-grid, .grid, .request { grid-template-columns: 1fr; gap: 20px; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 6px; }
+      .card { padding: 20px; }
+      th, td { padding: 12px 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="/">
+        <img src="https://peeringdb-media-prod.s3.amazonaws.com/media/logos_user_supplied/organization-43480-5e8de127.jpg" alt="" width="34" height="34">
+        <span>CloudC EdLab Network</span>
+      </a>
+      <div class="nav-links">
+        <a href="#policy">Policy</a>
+        <a href="#routing">Routing</a>
+        <a href="#request">Request peering</a>
+        <a href="/">Network overview &rarr;</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">AS203991 / Public Internet</p>
+          <h1>Peering policy</h1>
+          <p class="lead">Useful connections. Responsible routing.</p>
+          <p class="lead">CloudC EdLab Network is an experimental education and research network. We consider peering that supports routing research, measurement, and mutually useful connectivity.</p>
+          <div class="actions">
+            <a class="button primary" href="mailto:cloudc001@outlook.com?subject=Peering%20request%20-%20AS203991">Request peering</a>
+            <a class="button" href="https://www.peeringdb.com/net/41739">View PeeringDB</a>
+          </div>
+        </div>
+        <aside class="summary" aria-labelledby="summary-title">
+          <div class="summary-title">
+            <h2 id="summary-title">Policy at a glance</h2>
+            <span class="badge">Selective</span>
+          </div>
+          <dl>
+            <div class="fact"><dt>Public ASN</dt><dd>AS203991</dd></div>
+            <div class="fact"><dt>Address families</dt><dd>IPv4 &amp; IPv6 unicast</dd></div>
+            <div class="fact"><dt>Traffic ratio</dt><dd>No requirement</dd></div>
+            <div class="fact"><dt>Contracts</dt><dd>Not required</dd></div>
+            <div class="fact"><dt>Locations</dt><dd>Preferred, by agreement</dd></div>
+            <div class="fact"><dt>Transit role</dt><dd>Origin only</dd></div>
+          </dl>
+        </aside>
+      </div>
+      <p class="metadata">Last updated <time datetime="2026-10-30">30 October 2026</time> &middot; Public peering policy for CloudC EdLab Network / AS203991</p>
+    </div>
+
+    <section id="policy" class="wrap" aria-labelledby="policy-title">
+      <div class="section-head">
+        <h2 id="policy-title">A selective, practical approach</h2>
+        <span>Research value and reliable operation</span>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>How we evaluate requests</h3>
+          <p>Requests are reviewed individually. We consider a useful routing relationship, a suitable interconnection location, and the ability to operate the session responsibly. There is no fixed traffic-ratio requirement.</p>
+          <p>A contract is not normally required. Selective peering means that a request or shared exchange presence does not automatically establish a peering relationship.</p>
+        </article>
+        <article class="card">
+          <h3>Interconnection options</h3>
+          <p>We consider IPv4 and IPv6 unicast sessions. Bilateral sessions and route-server participation are considered where available; the location, transport, address families, and limits are agreed before activation.</p>
+          <p>Please use our <a href="https://www.peeringdb.com/net/41739">PeeringDB record</a> for published exchange presence and interface details. An Anycast PoP or upstream location does not by itself imply an available public peering port.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="routing" class="wrap" aria-labelledby="routing-title">
+      <div class="section-head">
+        <h2 id="routing-title">Routing scope and expectations</h2>
+        <span>Explicit prefixes &middot; No third-party transit</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Public prefix inventory &mdash; session exports and current visibility may vary.</caption>
+          <thead><tr><th scope="col">Family</th><th scope="col">Prefix</th><th scope="col">Origin</th></tr></thead>
+          <tbody>
+            <tr><td>IPv4</td><td><code>44.30.149.0/24</code></td><td>AS203991</td></tr>
+            <tr><td>IPv6</td><td><code>2a13:e5c0:ee02::/48</code></td><td>AS203991</td></tr>
+            <tr><td>IPv6</td><td><code>2a14:67c3:8800::/44</code></td><td>AS203991</td></tr>
+            <tr><td>IPv6</td><td><code>2602:f486:f0::/48</code></td><td>AS203991</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Published IRR reference: <code>RIPE::AS203991</code>. Confirm the exact prefix list and max-prefix limits with us when setting up a session. The inventory is not a guarantee that every upstream exports every prefix.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Route exchange</h3>
+          <ul>
+            <li>Our public peering exports are limited to our agreed prefixes originated by AS203991. We do not offer third-party transit or advertise downstream customer cones.</li>
+            <li>Announce only routes you are authorized to originate or export. Default routes, full tables, and third-party transit are not part of an ordinary peering session.</li>
+            <li>Keep IRR route objects and ROAs accurate where available. We expect valid origin authorization; RPKI-invalid routes are not acceptable for peering.</li>
+            <li>Exchange an explicit route scope and set max-prefix limits per session. Filter private, reserved, and otherwise unauthorized routes.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Session operation</h3>
+          <ul>
+            <li>Use a valid public ASN and keep a reachable operations contact and current PeeringDB information.</li>
+            <li>Agree on neighbor addresses, address families, transport, and any session authentication before enabling BGP. Exchange secrets privately.</li>
+            <li>Avoid route leaks and unnecessary update churn. Notify us of persistent session faults or unexpected announcements.</li>
+            <li>Multicast is not currently supported. This educational network operates on a best-effort basis, with no commercial SLA.</li>
+          </ul>
+        </article>
+      </div>
+      <aside class="notice"><strong>Geofeed is separate from route export.</strong> Geographic labels for smaller address blocks do not authorize additional BGP announcements. Only the prefixes explicitly agreed for a session should be accepted.</aside>
+    </section>
+
+    <section class="wrap" aria-labelledby="boundaries-title">
+      <div class="section-head">
+        <h2 id="boundaries-title">Anycast and network boundaries</h2>
+        <span>Public routing stays separate from the lab</span>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Multiple paths, one origin</h3>
+          <p>Some public prefixes are announced from multiple locations. The same destination may reach different sites depending on the source network and current BGP policy.</p>
+          <p>Anycast does not guarantee the geographically closest site, symmetric paths, or a particular latency. When reporting an issue, include both the source network and a timestamp so we can identify the path involved.</p>
+        </article>
+        <article class="card">
+          <h3>DN42 is a separate relationship</h3>
+          <p>Public AS203991 sessions are separate from our DN42 overlay. DN42 routes, private AS paths, and lab address space must not be exported into public Internet sessions; public transit must not be provided through the DN42 lab.</p>
+          <p>For overlay peering, use <a href="https://dn42.cloudc.dev">dn42.cloudc.dev</a>. A public peering agreement does not establish a DN42 session, or vice versa.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="request" class="wrap" aria-labelledby="request-title">
+      <div class="section-head">
+        <h2 id="request-title">Start a peering conversation</h2>
+        <span>A short technical introduction is enough</span>
+      </div>
+      <div class="card request">
+        <div>
+          <h3>Peering and operations contact</h3>
+          <p class="contact-email"><a href="mailto:cloudc001@outlook.com?subject=Peering%20request%20-%20AS203991">cloudc001@outlook.com</a></p>
+          <p>This is the public NOC contact listed in <a href="https://www.peeringdb.com/net/41739">PeeringDB</a>.</p>
+          <h3>Please include</h3>
+          <ul>
+            <li>Your ASN, network name, and PeeringDB link.</li>
+            <li>Proposed exchange or location and interconnection method.</li>
+            <li>IPv4 and/or IPv6 neighbor addresses, if already assigned.</li>
+            <li>Prefixes or IRR AS-SET and expected prefix counts.</li>
+            <li>A short purpose and a reachable NOC contact.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Suggested email format</h3>
+          <pre class="template">Subject: Peering request - AS203991 / AS&lt;your ASN&gt;
+
+Network / ASN:
+PeeringDB URL:
+Proposed IX / location / transport:
+Address families:
+Neighbor addresses (if assigned):
+Prefixes / IRR AS-SET:
+Expected IPv4 / IPv6 prefix counts:
+Purpose of the session:
+NOC contact:</pre>
+        </div>
+      </div>
+      <aside class="notice"><strong>Routing incident?</strong> Contact the same NOC address with the affected destination or prefix, source IP/ASN, UTC timestamp, traceroute or MTR, and observed AS path if available. Maintenance or protective route changes may temporarily affect reachability.</aside>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-content">
+      <span>CloudC EdLab Network / AS203991 &middot; Education, research, and responsible routing.</span>
+      <span><a href="/">Network overview</a> &middot; <a href="https://www.peeringdb.com/net/41739">PeeringDB</a></span>
+    </div>
+  </footer>
+</body>
+</html>
